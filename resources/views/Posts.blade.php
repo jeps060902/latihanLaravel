@@ -12,7 +12,7 @@
                 By <a href="/author/{{ $post->author->username }}"
                     class="hover:underline text-base text-gray-500">{{ $post->author->name }}</a>
                 In <a href="/kategori/{{ $post->kategoris->slug }}"
-                    class="hover:underline text-base text-gray-500">{{ $post->kategoris->kategori }}</a>
+                    class="hover:underline text-base text-gray-500">{{ $post->kategoris->name }}</a>
                 |
                 {{ $post->created_at->diffForHumans() }}
             </div>

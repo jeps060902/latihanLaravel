@@ -17,19 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $pengguna = User::create([
-            'name' => 'Jeps',
-            'username' => 'Jepss06',
-            'email' => 'Jepss06@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password'),
-            'remember_token' => Str::random(10)
-        ]);
-        // User::factory(10)->create();
+        $pengguna =
+            // User::factory(10)->create();
+            $this->call([CategorySeeder::class, UserSeeder::class]);
         Post::factory(100)->recycle(
             [
-                Kategori::factory(3)->create(),
-                User::factory(5)->create()
+                Kategori::all(),
+                User::All()
             ]
         )->create();
         // $this->call(PostSeeder::class);
